@@ -6,5 +6,7 @@
             "Doggo\\Database\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "illuminate/database": "^7.30"
+    }
 }
