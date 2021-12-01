@@ -279,4 +279,12 @@ return function(Slim\App $app) {
                     ->withHeader('Content-Type', 'application/json')
                     ->withStatus(200);
             });
+        //Több táblás lekérdezések
+        $app->get("/helyszinek/kommentek", function(Request $request, Response $response){
+            $helyszinek = Helyszin::join('kommentek', 'helyszinek.id', '=', 'kommentek.helyszin_id')
+                ->get(['helyszinek.*', 'kommentek.komment']);
+            $kimenet = $helyszinek->toJson();
+            $response->getBody()->write($kimenet);
+            return $response->withHeader("Content-type", "application/json");
+        });
 };
