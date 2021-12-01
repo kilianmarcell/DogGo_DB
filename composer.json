@@ -1,0 +1,10 @@
+{
+    "name": "doggo/database",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Doggo\\Database\\": "src/"
+        }
+    },
+    "require": {}
+}
